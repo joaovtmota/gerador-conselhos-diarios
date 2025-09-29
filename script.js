@@ -5,4 +5,13 @@ const conselhos = [
     "Aprenda algo novo hoje.", 
     "Seja gentil com todos que encontrar."
 ];
-console.log("Arquivo de script carregado. Array de conselhos pronto.");
+const conselhoTexto = document.getElementById('conselhoTexto'); 
+const novoConselhoBtn = document.getElementById('novoConselhoBtn');
+
+function gerarConselho() {
+    // BUG CORRIGIDO: Removemos o "+ 1′′
+    const indice = Math.floor(Math.random() * conselhos.length); 
+    conselhoTexto.textContent = conselhos[indice];
+}
+
+novoConselhoBtn.addEventListener('click', gerarConselho);
